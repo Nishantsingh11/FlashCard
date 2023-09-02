@@ -2,7 +2,6 @@ import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import CreateFlashCard from "./Componets/CreateFlashCard";
 import MyFlasCard from "./Componets/MyFlasCard";
-// import
 import FlasDetails from "./Componets/FlasDetails";
 import Navbar from "./Componets/Navbar";
 import Header from "./Componets/Header";
