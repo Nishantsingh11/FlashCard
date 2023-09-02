@@ -9,6 +9,13 @@ import { setFlashCard } from "../redux/action/flashcardActions";
 function MyFlasCard() {
   const flashcards = useSelector(state => state.flashcard.flashcards);
   const dispatch = useDispatch();
+  const truncate = (text, maxWords) =>{
+    const words = text.split(" ");
+    if (words.length > maxWords) {
+      return words.slice(0, maxWords).join(" ") + " ...";
+    }
+    return text;
+  }
 
   useEffect(() => {
     const storedFlashcards = localStorage.getItem('flashcards');
@@ -36,10 +43,10 @@ function MyFlasCard() {
                       {flashcard.group.groupName}
                     </h1>
                     <p className="text-md mt-4">
-                      {flashcard.group.groupDescription}
+                       {truncate(flashcard.group.groupDescription,10)}
                     </p>
                     <div className="card font-bold text-center mt-2">
-                      Card
+                      {flashcard.terms.length} Card
                     </div>
                   </div>
                   <div className="mt-4">
